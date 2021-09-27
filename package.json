@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon server.js",
+    "test": "jest --runInBand --verbose --detectOpenHandles --forceExit ./test",
     "db-migrate": "node ./node_modules/migrate-mongo/bin/migrate-mongo.js"
   },
   "dependencies": {
@@ -12,6 +13,7 @@
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "helmet": "^4.6.0",
+    "jest": "^26.6.3",
     "jsonschema": "^1.4.0",
     "lodash": "^4.17.21",
     "mongodb": "^3.6.4",

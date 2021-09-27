@@ -1,23 +1,22 @@
 const dbQueries = require("../db/dbQueries");
-const {
-  InternalServerError,
-} = require("../exceptions/exceptions");
+const validation = require('../validations');
 
 /**
  * Function to verify code.
  *
  * @param {*} db
- * @param {*} data
+ * @param {*} body
  * @returns {object}
  */
-const verify = async (db, { code }) => {
-  try {
-    
-  } catch (error) {
-    console.error("Error: " + error);
-    throw new InternalServerError("Something went wrong!");
-  }
+const verify = async (db, body) => {
+    // Do any DB related stuffs if needed.
+
+    // Validates the request body.
+    const isValid = await validation.validateVerifyCode(body);
+
+    return isValid;
 };
+
 
 module.exports = {
   verify,

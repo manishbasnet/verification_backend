@@ -4,6 +4,7 @@ var cookieParser = require('cookie-parser');
 const helmet = require('helmet');
 var logger = require('morgan');
 
+
 var indexRouter = require('./src/routes');
 var verifyRouter = require('./src/routes/verify');
 
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(helmet());
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.use('/api', indexRouter);
 app.use('/api', verifyRouter);

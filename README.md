@@ -30,6 +30,29 @@ For searching, test by queiring valid topic to the provided endpoint with postma
 -   POST | http://localhost:5000/api/verify
 
 ```
+Body
+    {
+            "code": 123491
+    }
+```
 
+```
+Success Response
+    {
+        "statusCode": 200,
+        "body": {
+            "message": "Code verified Successfully."
+        }
+    }
+```
+
+```
+Failure Response
+    {
+        "statusCode": 400,
+        "body": {
+            "message": "Invalid Request Arguments"
+        }
+    }
 ```
 
